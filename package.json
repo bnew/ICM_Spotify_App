@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "bn",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.16.1",
+    "node-fetch": "^1.7.3",
+    "socket.io": "^2.0.3"
+  }
+}
