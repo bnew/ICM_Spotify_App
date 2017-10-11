@@ -20,6 +20,8 @@ no database! only tracks stuff when users are connected.
 
 */
 
+
+
 var socket;
 var songInput;
 var button;
@@ -28,10 +30,11 @@ const navID = "nav-bar"
 const wallID = "wall";
 
 function setup(){
-	socket = io.connect('http://localhost:3000')
+	socket = io.connect('https://shielded-retreat-86041.herokuapp.com/')
 	songInput = createInput("");
 	songInput.attribute("placeholder", "enter url of a spotify song");
 	songInput.parent(navID);
+	songInput.mousePressed(inputClicked);
 
 	button = createButton("submit song");
 	button.parent(navID);
@@ -41,6 +44,9 @@ function setup(){
 
 }
 
+function inputClicked(){
+	button.html("submit song");
+}
 function submitSong(){
 	var trackID; 
 	var incoming = songInput.value();
@@ -51,6 +57,8 @@ function submitSong(){
 		//songInput.attribute("placeholder", "searching. you can add another");
 		trackID = split(incoming, match(incoming,urlRegex)[0])[1];
 		sendDataToSpotify(trackID);
+		button.html("song submitted");
+		songInput.attribute("placeholder", "enter url of a spotify song")
 
 	}
 	else{

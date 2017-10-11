@@ -1,20 +1,83 @@
+
 <html>
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/addons/p5.dom.min.js"></script>
     <script src="sketch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.slim.js"></script>
-      <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Spotify Wall</title>
+
+
+    <style>
+    body{
+      margin:20px;
+      font-family:sans-serif;
+      background-color: #8de5b5;
+
+    }
+    a{
+      color:white;
+      text-decoration: underline;
+      letter-spacing: 1;
+    }
+    #nav-bar, #wall{
+      width:100%;
+      display:inline-block;
+    }
+
+    
+    #nav-bar input{
+      min-width: 250px;
+      height: 30px;
+      font-size: 18px;
+      background-color:transparent;
+      border:none;
+      border-bottom:.3rem solid;
+      border-bottom-color: white; 
+    }
+    #wall{
+      margin-top:20px;
+      line-height: 2;
+    }
+    #nav-bar button{
+      margin-left:10px;
+      background-color:#009881;
+  -moz-border-radius:24px;
+  -webkit-border-radius:24px;
+  border-radius:24px;
+  border:none;
+  letter-spacing: 1;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  padding:8px 15px;
+  text-decoration:none;
+  
+}
+input::-webkit-input-placeholder{
+  color:white;
+}
+button:hover {
+  background-color:#5cbf2a;
+}
+#wrapper{
+  text-align:center;
+}
+    }
+
+
+    #wall a{
+      font-size:18px;
+    }
+
+
+  </style>
   </head>
-  <body style="
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-">
+  <body><div id='wrapper'>
 <div id="nav-bar"></div>
 <div id="wall"></div>
-
+</div>
 
   </body>
 </html>
